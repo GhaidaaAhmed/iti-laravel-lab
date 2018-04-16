@@ -19,8 +19,13 @@ class PostController extends Controller
         return view('posts.index',[ 'posts'=> $posts ]);
     }
 
-    public function show($id){
+    public function show(Request $request,$id){
         $post=post::find($id);
+        if($request->ajax()){
+            $user=$post->user;
+            //,'user'=>$user
+            return response()->json(['post'=>$post]);
+        }
         return view('posts.show',[ 'post'=> $post ]);
     }
 
