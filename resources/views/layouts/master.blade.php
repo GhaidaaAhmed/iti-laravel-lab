@@ -34,7 +34,14 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                     <li ><a href="{{ url('/posts') }}">Home</a></li>
+                     @guest
+                     @else
+                     @php
+                     $id=Auth::user()->id;
+                     @endphp
+                     <li><a href="{{ url('/userinfo/'.$id) }}">Account info</a></li>
+                     @endguest
                     </ul>
 
                     <!-- Right Side Of Navbar -->

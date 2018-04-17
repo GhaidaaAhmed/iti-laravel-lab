@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('posts','PostController@index')->middleware('auth');
+Route::get('userinfo/{id}','UsersController@show')->middleware('auth');
 Route::get('posts/create','PostController@create')->middleware('auth');
 Route::delete('posts/{id}','PostController@destroy')->middleware('auth');
 Route::get('posts/{id}/edit','PostController@edit')->middleware('auth');
