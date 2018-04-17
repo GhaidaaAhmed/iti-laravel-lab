@@ -22,6 +22,8 @@ Route::get('posts/{id}/edit','PostController@edit')->middleware('auth');
 Route::put('posts/{id}','PostController@update')->middleware('auth');
 Route::get('posts/{id}','PostController@show')->middleware('auth');
 Route::post('posts','PostController@store')->middleware('auth');
+Route::get('auth/github', 'Auth\LoginController@redirectToProvider');
+Route::get('auth/github/callback', 'Auth\LoginController@handleProviderCallback');
 
 
 

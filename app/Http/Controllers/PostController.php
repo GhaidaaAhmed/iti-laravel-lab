@@ -11,9 +11,7 @@ use Illuminate\Pagination\Paginator;
 
 
 class PostController extends Controller
-{
-    //
-    
+{    
     public function index(){
     $posts=post::paginate(3);
         return view('posts.index',[ 'posts'=> $posts ]);
@@ -23,7 +21,6 @@ class PostController extends Controller
         $post=post::find($id);
         if($request->ajax()){
             $user=$post->user;
-            //,'user'=>$user
             return response()->json(['post'=>$post]);
         }
         return view('posts.show',[ 'post'=> $post ]);

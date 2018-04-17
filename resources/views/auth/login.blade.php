@@ -54,6 +54,9 @@
                                 <button type="submit" class="btn btn-primary">
                                     Login
                                 </button>
+                                <a href="{{URL::to('/auth/github') }}" type="button"class="btn btn-primary">
+                                    Login with github
+                                </button>
 
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     Forgot Your Password?
