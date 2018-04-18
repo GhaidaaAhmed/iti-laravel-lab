@@ -19,6 +19,7 @@ class CreatePostsTable extends Migration
             $table->text('description');
             $table->text('slug')->nullable();
             $table->integer('user_id')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

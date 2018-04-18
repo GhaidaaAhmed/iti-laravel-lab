@@ -30,14 +30,6 @@ Posts
       <td>{{$post->slug}}</td>
       <td> {{ $post->created_at->format('Y-m-d') }} </td>
       <td><button  value="{{$post->id }}" data-toggle="modal" data-target="#mymodal" class="btn btn-primary viewPost">View</button></td>
-    
-      <!-- Modal
-      aria-labelledby="exampleModalCenterTitle"
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      {{ URL::to('posts/' . $post->id) }}
-       -->
 <div class="modal fade" id="mymodal" tabindex="-1" role="dialog"  aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -75,6 +67,7 @@ Posts
 @endforeach
 </tbody>
 </table>
+<td><a href={{ URL::to('posts/restore') }} type="button" class="btn btn-warning" >Restore deleted POst</a></td>
 <?php echo $posts->render(); ?>
 </div>
     <div class="col-sm">

@@ -15,6 +15,7 @@ class AddDeletedAtToPostsTable extends Migration
     {
         Schema::table('posts', function (Blueprint $table) {
             //
+            //$table->integer('deleted_at')->nullable();
         });
     }
 
@@ -27,6 +28,7 @@ class AddDeletedAtToPostsTable extends Migration
     {
         Schema::table('posts', function (Blueprint $table) {
             //
+            //$table->dropColumn('deleted_at');
         });
     }
 }

@@ -62,10 +62,15 @@ class PostController extends Controller
         $post->save();
         return redirect('posts'); 
     }
+    
     public function destroy($id){
         $post=post::find($id);
         $post->delete();
         return redirect('posts'); 
     }
-    
+
+    public function restore(){
+        $posts = post::onlyTrashed()->restore();
+        return redirect('posts'); 
+    }
 }

@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\only3posts;
 use Illuminate\Foundation\Http\FormRequest;
+
 
 class StorePostRequest extends FormRequest
 {
@@ -26,7 +28,8 @@ class StorePostRequest extends FormRequest
         return [
             'title' => 'required|min:3|unique:posts,title',
             'description'=>'required|min:10',
-            'user_id' => 'required|exists:users,id',
+            'user_id' => new only3posts,
+            
         ];
     }
     public function messages()
